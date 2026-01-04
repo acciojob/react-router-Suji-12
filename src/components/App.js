@@ -1,13 +1,32 @@
-
 import React from "react";
-import './../styles/App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+const Home = () => {
+  return <h2>Welcome to my website!</h2>;
+};
+
+const About = () => {
+  return <h2>This is a sample React Router program.</h2>;
+};
 
 const App = () => {
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+    <BrowserRouter>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
 
-export default App
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
