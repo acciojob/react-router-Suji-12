@@ -1,15 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-const Home = () => {
-  return <h2>Welcome to my website!</h2>;
-};
-
-const About = () => {
-  return <h2>This is a sample React Router program.</h2>;
-};
-
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <ul>
@@ -22,12 +14,17 @@ const App = () => {
       </ul>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/"
+          element={<h2>Welcome to my website!</h2>}
+        />
+        <Route
+          path="/about"
+          element={<h2>This is a sample React Router program.</h2>}
+        />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
-
